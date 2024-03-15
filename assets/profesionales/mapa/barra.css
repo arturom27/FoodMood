@@ -1,0 +1,30 @@
+/* Estilo para navegadores basados en Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* Color del pulgar (barra deslizante) */
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(145, 145, 145, 0.062); /* Color de la pista (fondo de la barra) */
+}
+
+/* Estilo para navegadores basados en Firefox */
+/* (Puede variar según la versión de Firefox) */
+/* Necesario en versiones antiguas de Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #f1f1f1;
+}
+
+/* Estilo para navegadores basados en Edge e Internet Explorer */
+/* (Puede variar según la versión de Edge) */
+/* Necesario en versiones antiguas de Edge */
+body {
+    scrollbar-base-color: #4CAF50;
+}
+
+/* Agrega estilos adicionales para el contenido de la página */
