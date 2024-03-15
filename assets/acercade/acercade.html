@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodMood | Acerca de</title>
+<link rel="stylesheet" href="barra.css">
+<link rel="icon" href="../icon.png" type="image/png">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="barra.css">
+<style>
+        footer {
+    border-top: 2px solid #fff; /* Establece un borde blanco de 1px */
+    background-color: #166a46;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+footer p {
+
+ font-size: 16px;   
+}
+h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      background-clip: text;  /* Aplica el degradado solo al texto */
+      -webkit-background-clip: text; /* Compatibilidad con navegadores webkit */
+      background-size: 400% 100%;  /* Tamaño del degradado */
+      background-image: linear-gradient(to right, #ffffff, #c8c8c8, #6a6a6a, #424242, #ffffff, #5f5f5f, #b4b4b4);
+      animation: color-change 10s infinite linear;
+    }
+
+    @keyframes color-change {
+      0% {
+        background-position: 0% 50%;
+        color: transparent;  /* Texto transparente para ver el degradado */
+      }
+      25% {
+        background-position: 100% 50%;
+        color: transparent;
+      }
+      50% {
+        background-position: 200% 50%;
+        color: transparent;
+      }
+      75% {
+        background-position: 300% 50%;
+        color: transparent;
+      }
+      100% {
+        background-position: 400% 50%;
+        color: transparent;
+      }
+    }
+
+    .section h2 {
+        margin-top: 0;
+        font-size: 1.8em;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+      margin-bottom: 20px;
+      /* Animación */
+      background-clip: text;  /* Aplica el degradado solo al texto */
+      -webkit-background-clip: text; /* Compatibilidad con navegadores webkit */
+      background-size: 400% 100%;  /* Tamaño del degradado */
+      background-image: linear-gradient(to right, #ffffff, #c8c8c8, #999999, #a1a1a1, #c8c8c8, #999999, #b4b4b4);
+      animation: color-change 10s infinite linear;
+    }
+
+    @keyframes color-change {
+      0% {
+        background-position: 0% 50%;
+        color: transparent;  /* Texto transparente para ver el degradado */
+      }
+      25% {
+        background-position: 100% 50%;
+        color: transparent;
+      }
+      50% {
+        background-position: 200% 50%;
+        color: transparent;
+      }
+      75% {
+        background-position: 300% 50%;
+        color: transparent;
+      }
+      100% {
+        background-position: 400% 50%;
+        color: transparent;
+      }
+    }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../PaginaPrincipal.html" target="_self">
+                <img src="../foodmoodlogo.png" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+  <input type="checkbox" id="active">
+  <label for="active" class="menu-btn"><span></span></label>
+  <label for="active" class="close"></label>
+  <div class="wrapper">
+      <ul>
+          <li><a href="../PaginaPrincipal.html">Página Principal</a></li>
+          <li><a href="../calendariodedieta.html">Calendario de Dieta (Beta)</a></li>
+          <li><a href="../calculadora.html">Calculadora de Calorías</a></li>
+          <li><a href="../Dieta.html">Crea tu dieta     <i class="fas fa-crown"></i></a></li>
+          <li><a href="../profesionales.html">Nuestros Profesionales     <i class="fas fa-crown"></i></a></li>
+          <li><a href="../blog/blog/blog.html">Blog</a></li>
+          <li><a href="acercade.html">Acerca de</a></li>
+      </ul>
+  </div>
+
+ <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+
+<div id="content">
+  <div class="section parallax" style="background-image: url('mision.jpg'); background-size: cover;" data-depth="0.0">
+    <div class="section-content">
+      <h2>Misión</h2>
+      <p>   ‎ </p>
+      <p>En nuestro incansable compromiso por fomentar la salud emocional a través de una conexión consciente con la alimentación, aspiramos a proporcionar a cada individuo las herramientas y el conocimiento necesarios para cultivar hábitos nutricionales que promuevan el bienestar mental. Nos esforzamos por ser líderes en la entrega de información precisa y accesible, guiando a las personas hacia una comprensión profunda de como los alimentos impactan su estado emocional.</p>
+      <p>   ‎ </p>
+      <p>Creemos en empoderar a nuestros usuarios para que tomen decisiones informadas, adopten un enfoque positivo hacia la alimentación y, en ultima instancia, mejoren su calidad de vida.</p> 
+    </div>
+  </div>
+
+  <div class="section" id="vision">
+    <div class="section-content">
+      <h2>Visión</h2>
+      <p>   ‎ </p>
+      <p>Nos visualizamos como la plataforma preeminente en el ámbito de la relación entre alimentación y salud emocional, siendo reconocidos por nuestro compromiso inquebrantable con la excelencia y la innovación. Buscamos crear un impacto global al transformar la manera en que las personas perciben y gestionan su bienestar emocional a través de una alimentación consciente. Al mirar hacia el futuro, aspiramos a ser catalizadores de un cambio positivo en la sociedad, inspirando a comunidades enteras a adoptar hábitos alimenticios que nutran no sólo el cuerpo, sino también el espíritu.</p>
+      <p>   ‎ </p>
+      <p>Nuestra misión y visión se entrelazan con la convicción de que la relación entre la alimentación y la salud emocional es un camino vital para una vida plena y equilibrada.</p>
+    </div>
+  </div>
+
+  <div class="section parallax" style="background-image: url('valores.jpg'); background-size: cover;" data-depth="0.0">
+    <div class="section-content">
+      <h2>Valores</h2>
+      <p>   ‎ </p>
+      <p>Responsabilidad: FoodMood se compromete a actuar de manera ética, transparente, honesta y responsable en todas sus áreas de operación. La empresa quiere ser un actor confiable y responsable en el sector de la salud y el bienestar.</p>
+      <p>   ‎ </p>
+      <p>Colaboración: FoodMood cree que la colaboración es esencial para lograr un impacto real en la sociedad. La empresa se abre a la colaboración con otros actores del sector, instituciones, organizaciones y comunidades para construir un ecosistema más sólido.</p>
+      <p>   ‎ </p>
+      <p>Transparencia: FoodMood busca mantener una comunicación clara, abierta, honesta y precisa con sus usuarios. La empresa quiere generar confianza y credibilidad a través de una comunicación transparente.</p>
+      <p>   ‎ </p>
+      <p>Respeto: FoodMood promueve un ambiente de respeto, inclusión, tolerancia y diversidad hacia las personas, sus ideas, opiniones y culturas. La empresa quiere ser un espacio donde todas las personas se sientan bienvenidas y valoradas.</p>
+      <p>   ‎ </p>
+
+    </div>
+  </div>
+
+  <div class="section" id="equipo">
+    <div class="section-content">
+      <h2>Integrantes</h2>
+      <p>   ‎ </p>
+      <p>Este proyecto esta creado por:</p>
+      <p>   ‎ </p>
+      <p>Vizcarra Castro Yazmin Elizabeth</p>
+      <p>   ‎ </p>
+      <p>Gutierrez Calvario Arturo Alejandro</p>
+    </div>
+  </div>
+
+  <section class="section shorts">
+    <h2>Como era FoodMood</h2>
+    <div class="videos">
+        <div class="video">
+            <div class="video-container">
+              <img src="1.jpg" >
+            </div>
+            <p>Participación en Expociencias Noroeste 2023</p>
+        </div>
+        <div class="video">
+          <div class="video-container">
+            <img src="2.jpg">
+          </div>
+          <p>Nuestro espacio en Expociencias Noroeste 2023</p>
+        </div>
+        <div class="video">
+          <div class="video-container">
+            <img src="3.jpg">
+          </div>
+          <p>Vista de la Sede</p>
+        </div>
+        <div class="video">
+          <div class="video-container">
+            <img src="4.jpg">
+          </div>
+          <p>Reconocimiento por haber participado</p>
+        </div>
+        <div class="video">
+          <div class="video-container">
+            <img src="5.jpg">
+          </div>
+          <p>Nuestro triptico</p>
+        </div>
+        <!-- Agregar más shorts de ser necesario -->
+    </div>
+    <div class="btn-container left" id="prevBtn">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="btn-container right" id="nextBtn">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+</section>
+</div>
+
+  <div class="statistics">
+
+    <div class="statistics-item">
+      <h3>Proyectos Completados</h3>
+      <canvas id="proyectosChart"></canvas>
+    </div>
+    <div class="statistics-item">
+      <h3>Horas de Trabajo por día</h3>
+      
+      <canvas id="horasChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+      <p>&copy; 2024 FoodMood™</p>
+      <p>Desarrollado por <a href="../acercade/acercade.html">Yazmin Vizcarra y Arturo Gutierrez</a></p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script src="script.js"></script>
+<script>
+
+</script>
+</body>
+</html>
