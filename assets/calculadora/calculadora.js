@@ -63,7 +63,7 @@ var popupContent = `<div style="display: flex; width: 100%;">`;
 
 // Sección de información del usuario a la derecha de la imagen de la izquierda
 popupContent += `<div class="user-info-details" style="margin-right: 800px;">`;
-popupContent += `<p><strong>Genero:</strong> ${genderText}</p>`;
+popupContent += `<p><strong>Género:</strong> ${genderText}</p>`;
 popupContent += `<p><strong>Edad:</strong> ${age}</p>`;
 popupContent += `<p><strong>Peso:</strong> ${weight} kg</p>`;
 popupContent += `<p><strong>Altura:</strong> ${height} cm</p>`;
@@ -81,7 +81,7 @@ popupContent += `</div>`;
   popupContent += `</div>`;
 
     popupContent += `</div>`;
-    popupContent += `<p class="caloric-distribution">Distribucion Calorica&nbsp;<br>De tu cuerpo</p>`;
+    popupContent += `<p class="caloric-distribution">Distribución Calórica&nbsp;<br>De tu cuerpo</p>`;
     popupContent += `<p class="recommended-calories">Calorías diarias recomendadas: ${caloriesAdjusted.toFixed(2)} kcal</p>`;
 
     var modal = document.getElementById('popup-modal');
