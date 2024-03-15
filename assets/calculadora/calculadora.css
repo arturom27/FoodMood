@@ -1,0 +1,315 @@
+body {
+    font-family: 'Alata', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 100px;
+    overflow: hidden;
+    background-color: #135C3E;
+    color: #ffffff;
+}
+
+/* Estilos originales para dispositivos móviles */
+@media only screen and (max-width: 1200px) {
+    body {
+        margin: 5px;
+    }
+}
+
+h1 {
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+    top: 500px;
+}
+
+input, select {
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px;
+    background-color: #ffffff;
+    color: #166a46;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 1200px) {
+    #result {
+        margin-top: 2px;
+        font-size: 2px; /* Puedes ajustar el tamaño de fuente según tus necesidades */
+    }
+}
+
+#chart-container {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 1200px) {
+    #chart-container {
+        margin-top: 80px;
+        font-size: 26px; /* Puedes ajustar el tamaño de fuente según tus necesidades */
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top: -50px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.7s ease; /* Transición solo para backdrop-filter */
+}
+
+@media only screen and (max-width: 1200px) {
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%; /* Puedes ajustar el ancho según tus necesidades */
+        max-width: 600px; /* Máximo ancho del modal */
+        height: 500px;
+        overflow: hidden;
+    }
+}
+
+body.blurred .modal {
+    backdrop-filter: blur(5px); /* Puedes ajustar la cantidad de desenfoque según tu preferencia */
+}
+
+.modal-content {
+    background: linear-gradient(to right, #ffffff40, #ffffff8f, #ffffff);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    width: 80%;
+    opacity: 0; /* Inicialmente transparente */
+    transform: translateX(-100%); /* Desplazamiento inicial fuera de la pantalla a la izquierda */
+    transition: opacity 0.5s ease-in-out, transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1); /* Transición de opacidad y transform */
+}
+
+@media only screen and (max-width: 1200px) {
+    .modal-content {
+        background: linear-gradient(to right, #ffffff60, #ffffff80, #ffffff);
+        width: 80%;
+        height: 400px;
+        margin-bottom: 1000px;
+    }
+}
+
+body.blurred .modal-content {
+    opacity: 1;
+    transform: translateX(0); /* Desplazamiento a la posición original al aparecer */
+}
+
+/* Puedes mantener estas reglas si aún deseas aplicar transiciones a la propiedad backdrop-filter */
+body.unblurred .modal-content {
+    opacity: 0;
+    transform: translateX(-100%); /* Desplazamiento fuera de la pantalla a la izquierda al desaparecer */
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.5s ease; /* Añade transición al color */
+}
+
+body.unblurred .close {
+    color: #ff0000;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.user-info,
+.center-image,
+.chart-section {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Cambios para dispositivos móviles */
+@media only screen and (max-width: 1200px) {
+    .user-info,
+    .center-image,
+    .chart-section {
+        width: 100%;
+    }
+}
+
+.user-info img,
+.center-image img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .user-info img,
+    .center-image img {
+        width: 100px;
+        height: 10px;
+        margin-right: 109px;
+    }
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+.center-image {
+    justify-content: center;
+}
+
+
+.chart-section {
+    text-align: center;
+}
+
+
+#popup-chart {
+    width: 20px;
+    height: 20px;
+}
+
+.caloric-distribution {
+    color: #166a46;
+    text-align: center;
+    margin-right: -750px;
+    font-size: 24px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .caloric-distribution {
+        font-size: 12px;
+        text-align: center;
+        margin-right: -170px;
+        margin-top: -60px;
+        vertical-align: sub;
+    }
+}
+
+.recommended-calories {
+    color: #166a46;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .recommended-calories {
+        font-size: 14px;
+        margin-top: 50px;
+    }
+}
+
+.chart-section {
+    width: 33%;
+    text-align: center;
+    margin-right: 235px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .chart-section {
+        width: 150px;
+        height: 150px;
+        margin-top: 90px;
+        margin-right: 0px;
+
+    }
+}
+
+.center-image {
+    width: 33%;
+    text-align: center;
+  }
+
+  .center-image img {
+    width: 100px;
+    height: 400px;
+    margin-left: 0px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .center-image img {
+        width: 100%;
+        height: 90%;
+        margin-left: 10px;
+    }
+}
+
+.user-info-details {
+    color: #166a46;
+    margin-left: 15px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .user-info-details {
+
+        color: #135C3E;
+
+    }
+}
+
+.user-info {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 80px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .user-info {
+        color: #ff0000;
+        margin-left: 0px;
+        margin-top: 0px;
+
+    }
+}
+
+  .user-info img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .user-info img {
+        width: 60px;
+        height: 60px;
+        margin-top: 90px;
+        margin-left: 20px
+    }
+}
