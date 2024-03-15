@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesionales de la salud</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="../../barra.css" />
+
+</head>
+<body>
+    <!-- Div donde se mostrará el mapa -->
+    <div id="map">
+        <div id="map-container"></div>
+    </div>
+    
+
+    <!-- Div para el contenido de la barra lateral derecha -->
+    <div id="sidebar">
+        <h2>Información del Profesional</h2>
+        <div id="profesional-info"></div>
+        <div id="radius-container">
+            <input type="range" id="radius" min="3000" max="3000" step="1000" value="10000">
+        </div>
+    </div>
+
+    <!-- Incluye Leaflet, una biblioteca de JavaScript para interactuar con mapas de OpenStreetMap -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Incluye Leaflet Routing Machine para la navegación -->
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+    <script src="app.js"></script>
+
+    <script>
+        // Espera a que el DOM esté completamente cargado antes de ejecutar el script
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tu código JavaScript aquí
+        });
+    </script>
+</body>
+</html>
