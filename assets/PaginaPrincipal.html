@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodMood | Página Principal</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Enlace a Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Enlace a Twemoji para emojis blancos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="barra.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* Estilo para las caritas */
+        .emoji-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .emoji {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            margin: 10px;
+        }
+
+        .emoji::before {
+            content: attr(data-emoji);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white; /* Cambia el color del emoji a blanco */
+        }
+
+        .emoji:hover {
+            transform: scale(1.2);
+        }
+
+#titulo {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+        #titulo {
+            font-size: 28px;
+     }
+        }
+
+        /* Estilo para las secciones con fondo personalizado */
+        .custom-background {
+            background: url('shomanzana.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 20px; /* Añadido para espacio entre las secciones */
+        }
+
+        /* Estilo para los iconos de redes sociales */
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            font-size: 50px;
+            margin-top: 20px;
+            height: 200px;
+            width: 100%;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            color: #a0a0a0; /* Cambia el color al pasar el mouse */
+        }
+
+        /* Estilo para ajustar la altura de las secciones */
+        .content {
+            height: 1000px; /* Ajusta esta altura según el contenido de tu página */
+            margin: 0; /* Elimina el margen predeterminado del contenido */
+            overflow: hiddn; /* Habilita el desplazamiento vertical */
+        }
+
+        /* Estilo para la transición de mensajes motivacionales */
+        #mensaje-motivacional {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .mostrar-mensaje {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        @media only screen and (min-width: 375px) and (max-width: 812px) {
+
+        #seccion2 iframe{
+            width: 90vw;
+            height: 50vh;
+        }
+    }
+
+    /* Estilo base del iframe */
+.iframe {
+    width: 100%;
+}
+
+/* Consulta de medios para iPhone X */
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) {
+    .iframe {
+        height: 40px; /* Ajusta esta altura según tus necesidades */
+    }
+}
+
+#miIframe {
+width: 100%;
+height: 47vh;
+}
+
+/* Consulta de medios para iPhone X */
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) {
+    #miIframe {
+        height: 45vh; /* Altura específica para iPhone X */
+    }
+}
+
+/* Consulta de medios para iPhone 14 Pro Max */
+@media only screen 
+    and (device-width : 430px) 
+    and (device-height : 932px) 
+    and (-webkit-device-pixel-ratio : 3) {
+    #miIframe {
+        height: 40vh; /* Altura específica para iPhone 14 Pro Max */
+    }
+}
+
+/* Consulta de medios para iPhone SE */
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 667px) 
+    and (-webkit-device-pixel-ratio : 3) {
+    #miIframe {
+        height: 0vh; /* Altura específica para iPhone 14 Pro Max */
+        margin-bottom: 300px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 600px) {
+
+#miIframe {
+height: 30vh;
+}
+
+}
+
+    </style>
+        <!-- Código de Google AdSense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4547392846848397" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- ... Tu código HTML ... -->
+
+    <div class="navbar" id="navbar">
+        <div class="logo">
+            <a href="PaginaPrincipal.html" target="_self">
+                <img src="foodmoodlogo.png" alt="Logo">
+            </a>
+        </div>
+    </div>
+    
+    </div>
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+        <ul>
+            <li><a href="PaginaPrincipal.html">Página Principal</a></li>
+            <li><a href="calendariodedieta.html">Calendario de Dieta (Beta)</a></li>
+            <li><a href="calculadora.html">Calculadora de Calorías</a></li>
+            <li><a href="Dieta.html">Crea tu dieta     <i class="fas fa-crown"></i></a></li>
+            <li><a href="profesionales.html">Nuestros Profesionales     <i class="fas fa-crown"></i></a></li>
+            <li><a href="blog/blog/blog.html">Blog</a></li>
+            <li><a href="acercade/acercade.html">Acerca de</a></li>
+        </ul>
+    </div>
+
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    
+
+    <div class="content">  
+        <!-- Sección 1: Caritas Vectoriales -->
+        <section id="seccion1" class="centered-section">
+            <iframe id="miIframe" src="seccion1pp.html" frameborder="0" width="100%" height="370vh"></iframe>
+        </section>
+
+        <!-- Sección 2: Video de YouTube -->
+        <section id="seccion2" class="centered-section">
+            <iframe width="800px" height="600px" src="https://www.youtube.com/embed/jBe6XrI8jVs"
+                title="¡Conoce Foodmood! | Funciones para conocer." frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </section>
+
+        <!-- Sección 3: Fondo Personalizado -->
+        <section id="seccion3" class="centered-section">
+            <iframe src="seccion3pp.html" frameborder="0" width="100%" height="620vh" allowfullscreen></iframe>
+        </section>
+
+        <!-- Sección 4: Fondo Personalizado -->
+        <section id="seccion4" class="centered-section">
+            <iframe src="seccion4pp.html" frameborder="0" width="100%" height="620vh" allowfullscreen></iframe>
+        </section>
+
+                <!-- Sección 6: Fondo Personalizado -->
+                <section id="seccion6" class="centered-section">
+                    <iframe src="seccion5pp.html" frameborder="0" width="100%" height="690vh" allowfullscreen></iframe>
+                </section>
+
+        <!-- Sección 5: Redes Sociales -->
+        <div id="titulo">¡Nuestras Redes Sociales!</div>
+        <section id="seccion5" class="centered-section social-icons">
+            <a href="https://www.youtube.com/@ArturoGutierrez27" target="_blank"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61553026903849" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <!-- Agrega más iconos según sea necesario -->
+        </section>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 FoodMood™</p>
+                <p>Desarrollado por <a href="./acercade/acercade.html">Yazmin Vizcarra y Arturo Gutierrez</a></p>
+            </div>
+        </footer>
+        <!-- Contenedor para mensajes motivacionales -->
+    </div>
+
+    <div id="mensaje-motivacional"></div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        function mostrarMensaje(mensaje) {
+            var mensajeMotivacional = document.getElementById('mensaje-motivacional');
+            mensajeMotivacional.innerHTML = mensaje;
+            mensajeMotivacional.classList.remove('mostrar-mensaje'); // Aseguramos que la clase se elimine antes de añadirla
+            setTimeout(function() {
+                mensajeMotivacional.classList.add('mostrar-mensaje');
+            }, 10); // Agregamos un pequeño retraso para permitir la eliminación de la clase anterior
+
+            document.addEventListener("DOMContentLoaded", function () {
+    var prevScrollPos = window.pageYOffset;
+    var navbar = document.querySelector('.navbar'); // Fix selector for navbar
+    var logo = document.querySelector('.logo img'); // Fix selector for logo
+    var menuBtn = document.querySelector('.menu-btn'); // Fix selector for menuBtn
+
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+            // Scroll up
+            navbar.style.top = "0";
+            logo.style.opacity = "1"; // Change opacity value to 1 to make it visible
+            menuBtn.style.opacity = "1"; // Change opacity value to 1 to make it visible
+        } else {
+            // Scroll down
+            navbar.style.top = `-${navbar.offsetHeight}px`;
+            logo.style.opacity = "0";
+            menuBtn.style.opacity = "0";
+        }
+
+        prevScrollPos = currentScrollPos;
+    };
+});
+
+        }
+    </script>
+</body>
+</html>

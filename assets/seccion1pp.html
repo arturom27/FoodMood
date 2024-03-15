@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo te sientes hoy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Alata', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 100px;
+            overflow: hidden;
+            background-color: #135C3D;
+            color: white;
+        }
+
+        #titulo {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .mood-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px; /* ajusta el ancho según tus preferencias */
+            margin-bottom: 20px;
+        }
+
+        .mood-icon {
+            font-size: 3em;
+            cursor: pointer;
+            margin: 10px;
+            color: white;
+            background-color: #135C3D;
+            border: none;
+            outline: none;
+            transition: transform 0.5s ease, font-size 0.3s ease, box-shadow 0.9s ease;
+            border-radius: 50%;
+        }
+
+        .mood-icon:hover {
+            transform: translateY(-5px);
+            font-size: 3.1em;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.3);
+        }
+
+        #mensaje-motivacional {
+            opacity: 0;
+            margin-top: -20px;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .mostrar-mensaje {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                margin: 90px 0 100px 0; /* Cambio en el margen superior e inferior */
+            }
+
+            .mood-icons {
+                width: 100%; /* ajusta el ancho según tus preferencias */
+                flex-wrap: wrap;
+            }
+
+            .mood-icon {
+                font-size: 40px;
+            }
+
+            .mood-icon:hover {
+                font-size: 45px;
+            }
+
+            #mensaje-motivacional {
+                margin-top: -20px; /* Ajuste del margen superior */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="titulo">¿Cómo te sientes hoy?</div>
+
+    <div class="mood-icons">
+        <button class="mood-icon fas fa-smile" onmouseover="aumentarIcono(this)" onmouseout="restaurarIcono(this)" onclick="mostrarMensaje('¡Hoy es un gran día! Mantén esa sonrisa y enfrenta los desafíos con optimismo.')"></button>
+        <button class="mood-icon fas fa-meh" onmouseover="aumentarIcono(this)" onmouseout="restaurarIcono(this)" onclick="mostrarMensaje('Todo está bien. Recuerda que cada día es una oportunidad para mejorar.')"></button>
+        <button class="mood-icon fas fa-meh-blank" onmouseover="aumentarIcono(this)" onmouseout="restaurarIcono(this)" onclick="mostrarMensaje('Si te sientes confundido, tómate un momento para reflexionar y establecer tus metas.')"></button>
+        <button class="mood-icon fas fa-frown" onmouseover="aumentarIcono(this)" onmouseout="restaurarIcono(this)" onclick="mostrarMensaje('Las dificultades son temporales. No estás solo/a. Pide ayuda si es necesario.')"></button>
+        <button class="mood-icon fas fa-sad-tear" onmouseover="aumentarIcono(this)" onmouseout="restaurarIcono(this)" onclick="mostrarMensaje('Es normal sentirse triste. Permítete sentir, pero también busca momentos de alegría.')"></button>
+    </div>
+
+    <div id="mensaje-motivacional"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        function mostrarMensaje(mensaje) {
+            var mensajeMotivacional = document.getElementById('mensaje-motivacional');
+            mensajeMotivacional.innerHTML = mensaje;
+            mensajeMotivacional.classList.remove('mostrar-mensaje'); // Aseguramos que la clase se elimine antes de añadirla
+            setTimeout(function() {
+                mensajeMotivacional.classList.add('mostrar-mensaje');
+            }, 10); // Agregamos un pequeño retraso para permitir la eliminación de la clase anterior
+        }
+
+        function aumentarIcono(icono) {
+            icono.style.transform = 'translateY(-5px)';
+            icono.style.fontSize = '3.1em';
+            icono.style.boxShadow = '0 0 40px rgba(255, 255, 255, 0.4)';
+        }
+
+        function restaurarIcono(icono) {
+            icono.style.transform = 'translateY(0)';
+            icono.style.fontSize = '3em';
+            icono.style.boxShadow = 'none';
+        }
+    </script>
+
+</body>
+</html>

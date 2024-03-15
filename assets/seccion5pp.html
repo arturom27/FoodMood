@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro e Invitación</title>
+    <style>
+        body {
+            font-family: 'Alata', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #135C3E; /* Color hex: 166A46 */
+        }
+
+        .content-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 100vh;
+            margin: 0; /* Establece el margen a cero */
+            font-size: 24px;
+            overflow: hidden; /* Habilita el desplazamiento vertical */
+        }
+
+        @media only screen and (max-width: 600px) {
+        .content-section {
+            font-size: 14px;
+            margin-left: -20px;
+     }
+        }
+
+        .message-section {
+            text-align: left;
+            margin-top: -100px;
+            padding: 20px;
+            width: 50%;
+            color: #FFFFFF;
+        }
+
+        .image-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+        .image-section {
+            margin-left: -25px;
+     }
+        }        
+
+        .custom-image {
+            width: 100%; /* Cambia el valor a 100% para cubrir el ancho */
+            height: 100vh; /* Cambia el valor a 100vh para cubrir la altura de la ventana */
+            object-fit: cover;
+        }
+
+        @media only screen and (max-width: 600px) {
+        .custom-image {
+            width: 600px; /* Cambia el valor a 100% para cubrir el ancho */
+            height: 600px; /* Cambia el valor a 100vh para cubrir la altura de la ventana */
+            left: 1000px;
+     }
+        }
+
+        /* Agregar un estilo para ocultar el script */
+        .hidden-script {
+            display: none;
+        }
+
+        /* Estilos del botón estético */
+        .btn-aesthetic {
+            background-color: #FFFFFF; /* Color hex: 3498db */
+            color: #166A46; /* Color hex: ffffff */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        @media only screen and (max-width: 600px) {
+        .btn-aesthetic {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+     }
+        }
+
+        .btn-aesthetic:hover {
+            background-color: #aaaaaa; /* Color hex: 2980b9 */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Alata" rel="stylesheet">
+</head>
+<body>
+    <div class="content-section">
+        <div class="message-section">
+            <h1>Conoce tus calorías</h1>
+            <p>Te presentamos nuestra calculadora de calorías diseñada para ayudarte a calcular tu distribución calórica personalizada con solo ingresar tus datos.</p>
+            <!-- Botón estético -->
+            <a href="" class="btn-aesthetic" onclick="redirigirDesdeSeccion3()">Haz click aquí</a>
+        </div>
+        <div class="image-section">
+            <img src="seccion5pp.png" alt="Imagen Personalizada" class="custom-image">
+        </div>
+    </div>
+    <script class="hidden-script">
+        // Función para ocultar el "Comando 5" si el usuario se ha registrado o iniciado sesión
+        function ocultarComando5() {
+            const usuarioRegistrado = localStorage.getItem("usuarioRegistrado");
+            const usuarioInicioSesion = localStorage.getItem("usuarioInicioSesion");
+
+            if (usuarioRegistrado === "true" || usuarioInicioSesion === "true") {
+                const scriptElement = document.querySelector(".hidden-script");
+                scriptElement.remove();
+            }
+        }
+
+        // Ejecutar la función cuando la página se haya cargado por completo
+        document.addEventListener("DOMContentLoaded", ocultarComando5);
+        
+        window.onload = function() {
+            const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+            if (usuario) {
+                mostrarPerfil(usuario);
+                // Establecer usuarioRegistrado o usuarioInicioSesion en true
+                localStorage.setItem("usuarioRegistrado", "true"); // Opción 1
+                // O bien
+                localStorage.setItem("usuarioInicioSesion", "true"); // Opción 2
+            }
+        };
+            // Función para redirigir desde la sección 3
+    function redirigirDesdeSeccion3() {
+        // Verificar si la página está dentro de un iframe
+        if (window.self !== window.top) {
+            // Si está dentro de un iframe, redirigir a PaginaPrincipal.html
+            window.top.location.href = "calculadora.html";
+        } else {
+            // Si no está dentro de un iframe, redirigir a acercade.html
+            window.location.href = "calculadora.html";
+        }
+    }
+    </script>
+</body>
+</html>
