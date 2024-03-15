@@ -1,0 +1,374 @@
+body {
+    font-family: 'Alata', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #135C3D;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+header {
+    background-color: #166a46;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+}
+
+nav {
+    background-color: #176e4a;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #b4b4b4;
+}
+
+section {
+    padding: 30px 20px;
+    background-color: #166a46;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+article img {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+.receta {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: right;
+    align-items: center;
+    border: 1px solid #ffffff09;
+    background-color: #ffffff09;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.receta:hover {
+    transform: scale(1.0);
+    background-color: #ffffff;
+}
+
+.receta h3 {
+    color: #ffffff;
+}
+
+.receta p {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+#overlay {
+
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#overlay-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #333;
+}
+
+.close-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 90px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.leer-mas {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p, li {
+        font-size: 1rem;
+    }
+}
+
+.close-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 90rem;
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff00;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #166a46;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.back-to-top:hover {
+    background-color: #e6e6e6;
+    color: #135C3D;
+}
+
+#shorts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#shorts h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+#shorts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.short {
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.short:hover {
+    transform: scale(1.1);
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.short iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .short {
+        width: calc(50% - 20px);
+    }
+}
+
+.short h2 {
+    color: #135C3D;
+    text-align: center;
+    margin-top: 0;
+}
+
+.cerrar-overlay-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.videos-grid {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.videos-row {
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.video-item {
+    width: 32%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .videos-row {
+        flex-direction: column;
+    }
+
+    .video-item {
+        width: 100%;
+    }
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.close-overlay {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#contenido-articulo-container {
+    background-color: #166a46;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+#videos-container {
+    background-color: #166a46;
+    padding: 40px;
+    border-radius: 20px;
+    border-radius: 8px;
+}
+
+.videos-row {
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.video-item {
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.receta-container {
+    cursor: pointer;
+    margin-bottom: 1px;
+    border: 1px solid #cccccc00;
+    padding: 1px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.receta-container:hover {
+    background-color: #f0f0f01f;
+}
+
+#ver-mas-btn {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#ver-mas-btn:hover {
+    background-color: #45a049;
+}
+
+.no-overflow {
+    overflow: hidden;
+}

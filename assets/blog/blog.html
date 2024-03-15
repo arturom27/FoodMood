@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre una vida saludable a través de la alimentación consciente. Blog de Comida y Salud Mental.">
+    <title>Comida y Salud Mental Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        header img {
+            width: 300px; /* Ancho deseado */
+            height: auto; /* Altura ajustada automáticamente */
+        }
+    </style>
+
+</head>
+<body>
+    <body id="body">
+    <header>
+        <!-- <h1><i class="fas fa-carrot icon"></i>FoodMood Blog</h1> -->
+        <a href="../PaginaPrincipal.html" target="_self">
+        <img src="foodmoodlogo.png" alt="FoodMood Blog">
+        </header>
+    <nav>
+        <a href="#recetas"><i class="fas fa-utensils icon"></i> Recetas</a>
+        <a href="#nutricion"><i class="fas fa-seedling icon"></i> Nutrición</a>
+        <a href="#bienestar"><i class="fas fa-smile-beam icon"></i> Bienestar Mental</a>
+        <a href="#shorts"><i class="fas fa-play-circle icon"></i> Shorts</a>
+        <a href="#consejos"><i class="fas fa-lightbulb icon"></i> Consejos</a>
+        <a href="googlemaps.html"><i class="fas fa-map-marker-alt icon"></i> Profesionales</a>
+    </nav>
+
+    <section id="recetas">
+        <article>
+            <h2>Recetas Saludables</h2>
+            <div class="receta-container" onclick="mostrarContenidoCompleto('Ensalada de Quinoa')">
+                <h3>Ensalada de Quinoa</h3>
+            </div>
+            
+            <div class="receta-container" onclick="mostrarContenidoCompleto('Pollo al Horno con Verduras')">
+                <h3>Pollo al Horno con Verduras</h3>
+            </div>
+            
+            <div class="receta-container" onclick="mostrarContenidoCompleto('Sopa de Lentejas')">
+                <h3>Sopa de Lentejas</h3>
+            </div>
+            
+            <div class="receta-container" onclick="mostrarContenidoCompleto('Tacos de Pescado')">
+                <h3>Tacos de Pescado</h3>
+            </div>
+            
+            <div class="receta-container" onclick="mostrarContenidoCompleto('Ensalada de Frutas')">
+                <h3>Ensalada de Frutas</h3>
+            </div>
+    
+            <!-- Contenedor para recetas adicionales que se cargarán al hacer clic en "Ver más" -->
+            <div id="recetas-adicionales"></div>
+    
+            <!-- Botón "Ver más" -->
+            <button id="ver-mas-btn" onclick="toggleVerMas()">Ver más</button>
+        </article>
+    </section>
+
+    <section id="nutricion">
+        <article>
+            <h2>Nutrición Equilibrada</h2>
+            <p>Aprende sobre la importancia de una dieta balanceada para mantener una mente sana. Descubre cómo incorporar nutrientes esenciales en tu día a día.</p>
+        </article>
+    </section>
+
+    <section id="bienestar">
+        <article>
+            <h2>Cuidado del Bienestar Mental</h2>
+            <p>Consejos y prácticas para mantener una buena salud mental en tu día a día. Explora técnicas de relajación y mindfulness para mejorar tu bienestar.</p>
+        </article>
+    </section>
+
+    
+    <section id="shorts">
+        <div id="shorts-container">
+            <h2>Videos Cortos</h2> <!-- Nuevo título agregado y centrado -->
+        </div>
+        
+        <!-- Tus artículos de Shorts -->
+        <article class="short">
+            <h2>Shorts: Recetas Exprés</h2>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/28LWvM8iP9g" frameborder="0" allowfullscreen></iframe>
+        </article>
+    
+        <article class="short">
+            <h2>Shorts: Recetas Exprés</h2>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/AcGXx_qMouM" frameborder="0" allowfullscreen></iframe>
+        </article>
+    
+        <article class="short">
+            <h2>Shorts: Recetas Exprés</h2>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/28LWvM8iP9g" frameborder="0" allowfullscreen></iframe>
+        </article>
+        <a href="javascript:void(0);" class="leer-mas" onclick="cargarMasVideos()">Ver más</a>
+    </section>
+
+    <section id="consejos">
+        <article>
+            <h2>Consejos para una Vida Saludable</h2>
+            <ul>
+                <li>Consejo 1: Incorpora alimentos ricos en nutrientes en tu dieta diaria.</li>
+                <li>Consejo 2: Practica la atención plena al comer para disfrutar cada bocado.</li>
+                <li>Consejo 3: Haz ejercicio regularmente para mejorar tu bienestar mental.</li>
+            </ul>
+        </article>
+    </section>
+
+    <div class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div id="overlay">
+        <span id="close-overlay" class="close-overlay" onclick="cerrarOverlay()">&times;</span>
+        <div id="contenido-articulo-container"></div>
+        <div id="videos-container"></div>
+    </div>    
+    </div>
+
+    <script>
+    </script>
+  <script src="app.js"></script>
+</body>
+</html>
