@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodMood | Blog</title>
+    <link rel="icon" href="../../icon.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="barra.css">
+    <link rel="stylesheet" href="../../styles.css">
+
+    
+    <style>
+footer {
+    border-top: 2px solid #fff; /* Establece un borde blanco de 1px */
+    background-color: #166a46;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+footer p {
+
+ font-size: 16px;   
+}
+
+h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      background-clip: text;  /* Aplica el degradado solo al texto */
+      -webkit-background-clip: text; /* Compatibilidad con navegadores webkit */
+      background-size: 400% 100%;  /* Tamaño del degradado */
+      background-image: linear-gradient(to right, #26a56e, #1d856a, #145137, #2bb28c, #1b7e53, #114c32, #118c57);
+      animation: color-change 10s infinite linear;
+    }
+
+    @keyframes color-change {
+      0% {
+        background-position: 0% 50%;
+        color: transparent;  /* Texto transparente para ver el degradado */
+      }
+      25% {
+        background-position: 100% 50%;
+        color: transparent;
+      }
+      50% {
+        background-position: 200% 50%;
+        color: transparent;
+      }
+      75% {
+        background-position: 300% 50%;
+        color: transparent;
+      }
+      100% {
+        background-position: 400% 50%;
+        color: transparent;
+      }
+    }
+
+    .section h2 {
+        margin-top: 0;
+        font-size: 1.8em;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+      margin-bottom: 20px;
+      /* Animación */
+      background-clip: text;  /* Aplica el degradado solo al texto */
+      -webkit-background-clip: text; /* Compatibilidad con navegadores webkit */
+      background-size: 400% 100%;  /* Tamaño del degradado */
+      background-image: linear-gradient(to right, #26a56e, #1d856a, #145137, #2bb28c, #1b7e53, #114c32, #118c57);
+      animation: color-change 10s infinite linear;
+    }
+
+    @keyframes color-change {
+      0% {
+        background-position: 0% 50%;
+        color: transparent;  /* Texto transparente para ver el degradado */
+      }
+      25% {
+        background-position: 100% 50%;
+        color: transparent;
+      }
+      50% {
+        background-position: 200% 50%;
+        color: transparent;
+      }
+      75% {
+        background-position: 300% 50%;
+        color: transparent;
+      }
+      100% {
+        background-position: 400% 50%;
+        color: transparent;
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../../PaginaPrincipal.html" target="_self">
+                <img src="foodmoodlogo.png" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper" style="z-index: 1000;">
+        <ul>
+            <li><a href="../../PaginaPrincipal.html">Página Principal</a></li>
+            <li><a href="../../calendariodedieta.html">Calendario de Dieta (Beta)</a></li>
+            <li><a href="../../calculadora.html">Calculadora de Calorías</a></li>
+            <li><a href="../../Dieta.html">Crea tu dieta     <i class="fas fa-crown"></i></a></li>
+            <li><a href="../../profesionales.html">Nuestros Profesionales     <i class="fas fa-crown"></i></a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="../../acercade/acercade.html">Acerca de</a></li>
+        </ul>
+    </div>
+
+    <div id="loader">
+        <div id="particles-js"></div> <!-- Mueve el contenedor de partículas aquí -->
+        <div id="loader-content">
+            <img src="../../icon.png" alt="Loading Logo" id="loader-logo">
+            <p id="loader-text">¡Preparando deliciosas recetas para ti!</p>
+            <div id="loader-spinner">
+                <i class="fas fa-utensils fa-3x"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>   ‎ </h2>
+            <h2>Recetas</h2>
+            <article class="recipe" data-recipe="quinoa">
+                <img src="https://cdn7.kiwilimon.com/recetaimagen/1505/12060.jpg" alt="Ensalada de Quinoa">
+                <p>Ensalada de Quinoa</p>
+            </article>
+            <article class="recipe" data-recipe="pollo">
+                <img src="https://i.ytimg.com/vi/MN6W8lYYNkY/maxresdefault.jpg" alt="Pollo al Horno con Verduras">
+                <p>Pollo al Horno con Verduras</p>
+            </article>
+            <article class="recipe" data-recipe="lentejas">
+                <img src="https://assets.epicurious.com/photos/63ceae6fd2744b6f0cb02154/4:3/w_4983,h_3737,c_limit/SopaDeLentejas_RECIPE_012023_46046.jpg" alt="Sopa de Lentejas">
+                <p>Sopa de Lentejas</p>
+            </article>
+            <article class="recipe" data-recipe="pescado">
+                <img src="https://cdn7.kiwilimon.com/recetaimagen/1901/3628.jpg" alt="Tacos de Pescado">
+                <p>Tacos de Pescado</p>
+            </article>
+            <article class="recipe" data-recipe="frutas">
+                <img src="https://editorialtelevisa.brightspotcdn.com/5c/ec/5dd3ba034d8a9e312df52058e4b8/ensalada-de-frutas.jpg" alt="Ensalada de Frutas">
+                <p>Ensalada de Frutas</p>
+            </article>
+        </section>
+        <section class="section shorts">
+            <h2>Shorts de Bienestar</h2>
+            <div class="videos">
+                <div class="video">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_63Ov5Ygqdg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>Depresión, pandemia y alimentación</p>
+                </div>
+                <div class="video">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/52DcRr12PV4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>4 ALIMENTOS 🧠 para tu SALUD MENTAL y CEREBRO</p>
+                </div>
+                <div class="video">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vDQe0OQQc6A" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>Depresión y comida chatarra: ¿la conexión revelada?</p>
+                </div>
+                <div class="video">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/L3ARwrt8sKY" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>4 comidas que impactan en tu estado anímico</p>
+                </div>
+                <div class="video">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xzm4sHardjo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>🧠CÓMO tu SALUD MENTAL AFECTA a TU VIDA</p>
+                </div>
+                <!-- Agregar más shorts de ser necesario -->
+            </div>
+            <div class="btn-container left" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="btn-container right" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>Datos interesantes</h2>
+            <article class="recipe" data-recipe="saludmental">
+                <img src="https://media.istockphoto.com/id/1058086058/es/vector/contorno-de-cabeza-y-cerebro-con-concepto-de-coraz%C3%B3n.jpg?s=612x612&w=0&k=20&c=DPxaMg0eIoUgO-SKzUG_2r3wUoGaKsc6XMtUeuLLSHo=" alt="Ensalada de Quinoa">
+                <p>¿Como la salud mental afecta en nuestra vida cotidiana?</p>
+            </article>
+            <article class="recipe" data-recipe="musica">
+                <img src="https://allgo.org/wp-content/uploads/Cover_8.25Blog.png" alt="musicafoto">
+                <p>La música: un elixir para el alma</p>
+            </article>
+            <article class="recipe" data-recipe="naturaleza">
+                <img src="https://biencomun.com/wp-content/uploads/2023/08/woman-standing-forest-with-her-arms-wide-open-1400x933.jpg" alt="Sopa de Lentejas">
+                <p>La naturaleza: un refugio para el bienestar</p>
+            </article>
+            <article class="recipe" data-recipe="ejercicio">
+                <img src="https://images.ecestaticos.com/74SnzfyU9yl0z-JkNPsErBm1gUM=/0x0:2119x1415/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fe71%2F7a2%2Fc78%2Fe717a2c781c766d78091be61a4f9aca1.jpg" alt="Tacos de Pescado">
+                <p>El ejercicio: una medicina para el cuerpo y la mente</p>
+            </article>
+            <article class="recipe" data-recipe="sueno">
+                <img src="https://d51h1y0hva8v.cloudfront.net/images/default-source/art%C3%ADculos/sueno.png?sfvrsn=b4e634c_2" alt="Ensalada de Frutas">
+                <p>El sueño: un viaje reparador para la mente</p>
+            </article>
+        </section>
+    
+    <div class="container">
+        <section class="preview-container">
+            <section class="preview">
+                <h2>¡Encuentra a tu profesional!</h2>
+                <p>¡Con un par de clicks puedes cambiar tu vida!</p>
+        <a href="../../profesionales.html" target="_blank" class="iframe-container">
+            <img src="mapa.png" alt="Mapa" class="mapa-foto">
+        </a>
+         </section>
+    </div>
+
+        
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FoodMood™</p>
+            <p>Desarrollado por <a href="../../acercade/acercade.html">Yazmin Vizcarra y Arturo Gutierrez</a></p>
+        </div>
+    </footer>
+
+    <div id="recipePopup" class="recipe-popup" style="overflow: auto;">
+        <span class="close-btn">&times;</span>
+        <h2 id="recipeTitle"></h2>
+        <div id="recipeContent" style="overflow: auto;">
+            <div id="quinoaIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                <h3>Ensalada de Quinoa</h3>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>Quinoa</li>
+                    <li>Vegetales variados</li>
+                    <li>Aderezo</li>
+                </ul>
+                <h3>Pasos</h3>
+                <ol>
+                    <li>Cocina la quinoa según las instrucciones del paquete.</li>
+                    <li>Corta los vegetales en trozos pequeños.</li>
+                    <li>Mezcla la quinoa cocida con los vegetales y el aderezo.</li>
+                    <!-- Agrega más pasos según sea necesario -->
+                </ol>
+                <h3>Fotos</h3>
+                <img src="https://okdiario.com/img/recetas/2017/02/03/como-hervir-quinoa.jpg" alt="Cocinar quinoa">
+                <img src="https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/elgranchef/i/ideas-para-cocinar-vegetales-9_1.jpg" alt="Preparar vegetales">
+                <!-- Agrega más fotos de los pasos -->
+                <h3>Videos</h3>
+                <iframe width="320px" height="300px" src="https://www.youtube.com/embed/QsVPRWpVHPw?autoplay=1&rel=0" frameborder="0" allowfullscreen style="border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 0 auto; display: block;"></iframe>
+                <h3>Valores Nutricionales</h3>
+                <img src="https://images.openfoodfacts.org/images/products/841/018/403/2032/nutrition_es.16.400.jpg" alt="Informacion nutrimental" style="display: block; margin: 0 auto; width: 300px; height: auto;">
+                <canvas id="quinoaChart" width="400" height="200"></canvas> <!-- Asegúrate de que el canvas esté aquí -->
+                <!-- Agrega más videos de los pasos -->
+            </div>
+    
+            <!-- Detalles de Pollo al Horno con Verduras -->
+            <div id="polloIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                <h3>Pollo al Horno con Verduras</h3>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>Pechugas de pollo</li>
+                    <li>Verduras variadas</li>
+                    <li>Sal y pimienta al gusto</li>
+                </ul>
+                <h3>Pasos</h3>
+                <ol>
+                    <li>Prepara las pechugas de pollo y las verduras.</li>
+                    <li>Sazona con sal y pimienta al gusto.</li>
+                    <li>Hornea a temperatura media hasta que el pollo esté bien cocido.</li>
+                    <!-- Agrega más pasos según sea necesario -->
+                </ol>
+                <h3>Fotos</h3>
+                <img src="https://i.ytimg.com/vi/MN6W8lYYNkY/maxresdefault.jpg" alt="Pollo al Horno con Verduras">
+                <!-- Agrega más fotos de los pasos -->
+                <h3>Videos</h3>
+                <iframe width="320px" height="300px" src="https://www.youtube.com/embed/MN6W8lYYNkY?autoplay=1&rel=0" frameborder="0" allowfullscreen style="border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 0 auto; display: block;"></iframe>
+                <h3>Valores Nutricionales</h3>
+                <img src="https://images.openfoodfacts.org/images/products/858/500/243/4517/nutrition_es.5.full.jpg" alt="Informacion nutrimental" style="display: block; margin: 0 auto; width: 300px; height: auto;">
+                <canvas id="polloChart" width="400" height="200"></canvas> <!-- Asegúrate de que el canvas esté aquí -->
+                <!-- Agrega más videos de los pasos -->
+            </div>
+    
+            <!-- Detalles de Sopa de Lentejas -->
+            <div id="lentejasIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                <h3>Sopa de Lentejas</h3>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>Lentejas</li>
+                    <li>Verduras (cebolla, zanahoria, apio)</li>
+                    <li>Caldo de verduras</li>
+                    <li>Especias y hierbas al gusto</li>
+                </ul>
+                <h3>Pasos</h3>
+                <ol>
+                    <li>Lava las lentejas y déjalas en remojo.</li>
+                    <li>Saltea las verduras en una olla grande.</li>
+                    <li>Agrega las lentejas escurridas y el caldo de verduras.</li>
+                    <!-- Agrega más pasos según sea necesario -->
+                </ol>
+                <h3>Fotos</h3>
+                <img src="https://assets.epicurious.com/photos/63ceae6fd2744b6f0cb02154/4:3/w_4983,h_3737,c_limit/SopaDeLentejas_RECIPE_012023_46046.jpg" alt="Sopa de Lentejas">
+                <h3>Videos</h3>
+                <iframe width="320px" height="300px" src="https://www.youtube.com/embed/E8dwIz8v398?autoplay=1&rel=0" frameborder="0" allowfullscreen style="border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 0 auto; display: block;"></iframe>
+                <h3>Valores Nutricionales</h3>
+                <img src="https://cdn.shopify.com/s/files/1/2216/9173/files/Tabla_Nutrimental_Sopa_de_lenteja_instantanea_blanco_1.png?v=1676041012" alt="Informacion nutrimental" style="display: block; margin: 0 auto; width: 300px; height: auto;">
+                <canvas id="lentejasChart" width="400" height="200"></canvas> <!-- Asegúrate de que el canvas esté aquí -->
+                <!-- Agrega más videos de los pasos -->
+            </div>
+    
+            <!-- Detalles de Tacos de Pescado -->
+            <div id="pescadoIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                <h3>Tacos de Pescado</h3>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>Filetes de pescado blanco</li>
+                    <li>Harina de maíz para tortillas</li>
+                    <li>Vegetales para topping (repollo, tomate, aguacate)</li>
+                    <li>Salsa y limón al gusto</li>
+                </ul>
+                <h3>Pasos</h3>
+                <ol>
+                    <li>Prepara la masa para las tortillas y cocina los filetes de pescado.</li>
+                    <li>Arma los tacos con los ingredientes deseados.</li>
+                    <li>Sirve con salsa y limón al gusto.</li>
+                    <!-- Agrega más pasos según sea necesario -->
+                </ol>
+                <h3>Fotos</h3>
+                <img src="https://cdn7.kiwilimon.com/recetaimagen/1901/3628.jpg" alt="Tacos de Pescado">
+                <h3>Videos</h3>
+                <iframe width="320px" height="300px" src="https://www.youtube.com/embed/9-YHh2Z03d0?autoplay=1&rel=0" frameborder="0" allowfullscreen style="border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 0 auto; display: block;"></iframe>
+                <h3>Valores Nutricionales</h3>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_619,h_278/https://sanamar.es/wp-content/uploads/2020/06/Tabla-contenido-nutricional-caella-opcion-2-1.png" alt="Informacion nutrimental" style="display: block; margin: 0 auto; width: 300px; height: auto;">
+                <canvas id="pescadoChart" width="400" height="200"></canvas> <!-- Asegúrate de que el canvas esté aquí -->
+                <!-- Agrega más videos de los pasos -->
+            </div>
+    
+            <!-- Detalles de Ensalada de Frutas -->
+            <div id="frutasIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                <h3>Ensalada de Frutas</h3>
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>Frutas variadas (fresas, piña, uvas, kiwi)</li>
+                    <li>Miel o yogur para aderezo</li>
+                    <li>Nueces o almendras (opcional)</li>
+                </ul>
+                <h3>Pasos</h3>
+                <ol>
+                    <li>Lava y corta las frutas en trozos.</li>
+                    <li>Mezcla las frutas en un tazón y añade el aderezo deseado.</li>
+                    <li>Opcional: Agrega nueces o almendras para un toque crujiente.</li>
+                    <!-- Agrega más pasos según sea necesario -->
+                </ol>
+                <h3>Fotos</h3>
+                <img src="https://ensaladafrutas.com/wp-content/uploads/2017/11/17.-ensalada-de-fruta-peruana.jpg" alt="Ensalada de Frutas">
+                <img src="https://hispanaglobal.com/wp-content/uploads/2019/05/Ensalada-de-frutas-Hispana-Global-1.jpg" alt="Ensalada de Frutas">
+
+                <h3>Videos</h3>
+                <iframe width="320px" height="300px" src="https://www.youtube.com/embed/yI1y6PDBCak?autoplay=1&rel=0" frameborder="0" allowfullscreen style="border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 0 auto; display: block;"></iframe>
+                <h3>Valores Nutricionales</h3>
+                <img src="https://foodhero.org/sites/foodhero-prod/files/labels/FruitSaladNF20-Sp_0.png" alt="Informacion nutrimental" style="display: block; margin: 0 auto; width: 300px; height: auto;">
+                <canvas id="frutasChart" width="400" height="200"></canvas> <!-- Asegúrate de que el canvas esté aquí -->
+                <!-- Agrega más videos de los pasos -->
+            </div>
+    
+            <!-- Detalles de Salud Mental -->
+            <div id="saludmentalIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                <h3>¿Cómo la salud mental afecta en nuestra vida cotidiana?</h3>
+                <p>
+                    La salud mental desempeña un papel crucial en nuestra vida cotidiana. Afecta nuestra capacidad para manejar el estrés,
+                    tomar decisiones, relacionarnos con los demás y enfrentar los desafíos de la vida. Es importante cuidar nuestra salud
+                    mental practicando el autocuidado, buscando apoyo cuando sea necesario y adoptando hábitos que promuevan el bienestar
+                    emocional.                </p>
+
+                    <h3>Fotos</h3>
+
+                    <img src="https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2022/03/chica-estado-animo-2640895.jpg?tf=3840x" alt="Ensalada de Frutas">
+
+
+                       <h3> Solución para mejorar tu salud mental:</h3>
+                        <h3> 1. Autocuidado:</h3>
+                        
+                        <p> Hábitos saludables: Dormir lo suficiente, comer una dieta equilibrada y hacer ejercicio regularmente son esenciales para la salud mental.</p>
+                        <p> Manejo del estrés: Encuentra técnicas para manejar el estrés como la meditación, el yoga o la respiración profunda.</p>
+                        <p> Actividades placenteras: Dedica tiempo a actividades que disfrutes como leer, escuchar música o pasar tiempo con seres queridos.</p>
+                        <h3>2. Buscar apoyo:</h3>
+                        
+                        <p>Habla con alguien de confianza: Un amigo, familiar, terapeuta o consejero puede ayudarte a procesar emociones difíciles y obtener apoyo.</p>
+                        <p> Grupos de apoyo: Unirse a un grupo de apoyo te permite conectar con personas que están pasando por experiencias similares.</p>
+                        <p> Líneas de ayuda: Hay líneas de ayuda disponibles para personas que necesitan apoyo inmediato en situaciones difíciles.</p>
+                        <h3> 3. Hábitos que promueven el bienestar emocional:</h3>
+                        
+                        <p>Practicar la gratitud: Enfócate en las cosas buenas de tu vida y expresa gratitud por ellas.</p>
+                        <p> Pensamiento positivo: Desarrolla una perspectiva positiva y desafía los pensamientos negativos.</p>
+                        <p> Conectar con la naturaleza: Pasar tiempo al aire libre puede mejorar el estado de ánimo y reducir el estrés.</p>
+                        <p>Aprender a decir no: Es importante establecer límites y cuidar tu propio bienestar.</p>
+            </div>
+                        <!-- Detalles de Salud Mental -->
+                        <div id="musicaIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                            <h3>La música: un elixir para el alma</h3>
+                            <h3>Introducción:</h3>
+                            <p>Desde tiempos inmemoriales, la música ha acompañado a la humanidad en sus momentos más importantes. Ha servido como vehículo de expresión, celebración, ritual y, sin duda, como fuente de bienestar. En este artículo, exploraremos cómo la música puede mejorar nuestra salud mental, revelando sus mecanismos de acción, beneficios comprobados y recomendaciones prácticas para incorporarla en la vida diaria.</p>
+            
+                                <h3>Fotos</h3>
+            
+                                <img src="https://salud.nih.gov/sites/salud/files/styles/max_1300x1300/public/2022-12/201802-ninos-tocando-musica-salon-clases.jpg?itok=RJaS_6YP" alt="Ensalada de Frutas">
+            
+            
+                                   <h3>Beneficios:</h3>
+                                    
+                                    <p>Reduce el estrés: La música tiene la capacidad de disminuir el cortisol, la hormona del estrés, y aumentar la producción de endorfinas, las hormonas del placer. Esto se traduce en una sensación de calma, bienestar y disminución de la tensión.</p>
+                                    
+                                    <p>Mejora el estado de ánimo: Los sonidos y melodías agradables estimulan la liberación de dopamina, un neurotransmisor relacionado con la recompensa y el placer. Esto genera una sensación de felicidad, optimismo y entusiasmo.</p>
+                                    
+                                    <p>Aumenta la creatividad: La música puede estimular la actividad cerebral en áreas relacionadas con la creatividad, la imaginación y la resolución de problemas. Esto puede ser útil para el trabajo, el estudio o cualquier actividad que requiera pensamiento creativo.</p>
+                                    <p>Mejora la memoria y el aprendizaje: La música puede mejorar la memoria a corto y largo plazo, así como la capacidad de aprendizaje. Esto se debe a que la música ayuda a crear conexiones neuronales más fuertes en el cerebro.</p>
+                                    <p>Fortalece el sistema inmunológico: El efecto calmante y reductor del estrés de la música puede tener un impacto positivo en el sistema inmunológico, haciéndonos más resistentes a las enfermedades.</p>
+                                </div>
+                                <!-- Detalles de Salud Mental -->
+                                <div id="naturalezaIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                                    <h3>La naturaleza: un refugio para el bienestar</h3>
+                                    <h3>Introducción:</h3>
+                                    <p>En un mundo cada vez más urbanizado y artificial, la naturaleza emerge como un oasis de bienestar para el cuerpo y la mente. Desde el canto de las aves hasta el susurro del viento entre las hojas, la naturaleza nos ofrece una experiencia sensorial única que puede mejorar significativamente nuestra salud mental.</p>
+                    
+                                        <h3>Fotos</h3>
+                    
+                                        <img src="https://www.cuerpomente.com/medio/2023/09/01/medicina-forestal_0c1738fa_230901120331_900x900.jpg" alt="Ensalada de Frutas">
+                    
+                    
+                                           <h3>Beneficios:</h3>
+                                            
+                                            <p>Reduce el estrés: El contacto con la naturaleza tiene un efecto calmante y restaurador sobre el sistema nervioso, disminuyendo el cortisol, la hormona del estrés. Esto se traduce en una sensación de paz interior, tranquilidad y reducción de la ansiedad.</p>
+                                            
+                                            <p>Mejora el estado de ánimo: La naturaleza tiene la capacidad de aumentar los niveles de serotonina y dopamina, neurotransmisores asociados con la felicidad, el placer y la motivación. Esto genera una sensación de bienestar, optimismo y vitalidad.</p>
+                                            
+                                            <p>Aumenta la concentración y la creatividad: La naturaleza puede mejorar la atención y la concentración, así como la capacidad de pensar de forma creativa y resolver problemas. Esto se debe a que la naturaleza proporciona un ambiente tranquilo y estimulante que facilita la concentración y la fluidez mental.</p>
+                                            <p>Mejora la memoria y el aprendizaje: La música puede mejorar la memoria a corto y largo plazo, así como la capacidad de aprendizaje. Esto se debe a que la música ayuda a crear conexiones neuronales más fuertes en el cerebro.</p>
+                                            <p>Fortalece el sistema inmunológico: El contacto con la naturaleza puede fortalecer el sistema inmunológico al aumentar la producción de células NK (natural killer), que son responsables de combatir las infecciones.</p>
+                                            <p>Mejora el sueño: Pasar tiempo en la naturaleza puede mejorar la calidad del sueño al regular el ritmo circadiano y reducir el insomnio. Esto se debe a que la luz natural y el aire fresco ayudan a sincronizar el reloj biológico del cuerpo.</p>
+                                            <p>Reduce la inflamación: La naturaleza tiene un efecto antiinflamatorio, lo que puede reducir el riesgo de enfermedades crónicas como la diabetes, la artritis y las enfermedades cardíacas.</p>
+
+            </div>
+                                            <!-- Detalles de Salud Mental -->
+                                            <div id="ejercicioIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                                                <h3>El ejercicio: una medicina para el cuerpo y la mente</h3>
+                                                <h3>Introducción:</h3>
+                                                <p>El ejercicio físico no solo es importante para la salud física, sino que también juega un papel fundamental en el bienestar mental. Desde una caminata rápida hasta una sesión de yoga intensa, la actividad física puede ser una poderosa herramienta para mejorar nuestro estado de ánimo, reducir el estrés y aumentar la autoestima.</p>
+                                
+                                                    <h3>Fotos</h3>
+                                
+                                                    <img src="https://media.revistagq.com/photos/5d35929de887bb000828e8f3/16:9/w_2560%2Cc_limit/GettyImages-982408932-(1).jpg" alt="Ensalada de Frutas">
+                                
+                                
+                                                       <h3>Beneficios:</h3>
+                                                        
+                                                        <p>Reduce el estrés: El ejercicio libera endorfinas, las hormonas del placer, que tienen un efecto calmante y restaurador sobre el sistema nervioso. Esto se traduce en una sensación de bienestar, tranquilidad y reducción de la ansiedad.</p>
+                                                        
+                                                        <p>Mejora el estado de ánimo: El ejercicio aumenta los niveles de serotonina y dopamina, neurotransmisores asociados con la felicidad, el placer y la motivación. Esto genera una sensación de optimismo, vitalidad y energía.</p>
+                                                        
+                                                        <p>Aumenta la autoestima: El ejercicio regular puede aumentar la autoestima y la confianza en uno mismo al mejorar la imagen corporal y la sensación de logro.</p>
+                                                        <p>Mejora la memoria y el aprendizaje: El ejercicio puede mejorar la memoria a corto y largo plazo, así como la capacidad de aprendizaje. Esto se debe a que el ejercicio aumenta el flujo sanguíneo al cerebro y promueve la neurogénesis, la creación de nuevas neuronas.</p>
+                                                        <p>Reduce el riesgo de enfermedades mentales: El ejercicio regular puede reducir el riesgo de sufrir depresión, ansiedad y otros problemas de salud mental.</p>
+                                            
+            
+                        </div>
+                                                                    <!-- Detalles de Salud Mental -->
+                                                                    <div id="suenoIngredients" class="recipe-details" style="overflow: auto; height: 500px;">
+                                                                        <h3>El sueño: un viaje reparador para la mente</h3>
+                                                                        <h3>Introducción:</h3>
+                                                                        <p>El sueño: un viaje reparador para la mente.</p>
+                                                        
+                                                                            <h3>Fotos</h3>
+                                                        
+                                                                            <img src="https://sognare.com.mx/notas/wp-content/uploads/2020/12/shutterstock_1756229882-1200x675.jpg" alt="Ensalada de Frutas">
+                                                        
+                                                        
+                                                                               <h3>Beneficios:</h3>
+                                                                                
+                                                                                <p>Mejora el estado de ánimo: Dormir lo suficiente ayuda a regular las emociones y reduce la irritabilidad, la ansiedad y la depresión.</p>
+                                                                                
+                                                                                <p>Aumenta la concentración y la memoria: El sueño es esencial para la consolidación de la memoria y el aprendizaje. Dormir bien nos ayuda a concentrarnos mejor, recordar información y tomar decisiones más acertadas.</p>
+                                                                                
+                                                                                <p>Fortalece el sistema inmunológico: El sueño ayuda a fortalecer el sistema inmunológico y a combatir las infecciones.</p>
+                                                                                <p>Reduce el riesgo de enfermedades: La falta de sueño se ha asociado con un mayor riesgo de sufrir enfermedades crónicas como la diabetes, la obesidad, las enfermedades cardíacas y la depresión.</p>
+                                                                               
+                                                                    
+                                    
+                                                </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+
+    </script>
+
+    <script src="app.js"></script>
+    <script src="../../script.js"></script>
+</body>
+</html>
