@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodMood | Chatea con nuestra IA</title>
+    <link rel="icon" href="../icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../barra.css">
+</head>
+<style>
+
+    body {
+
+        background-color: #135c3e;
+    }
+    footer {
+border-top: 2px solid #fff; /* Establece un borde blanco de 1px */
+background-color: #166a46;
+color: #fff;
+padding: 10px 0;
+text-align: center;
+animation: slideIn 0.5s ease-in-out;
+}
+
+footer p {
+
+font-size: 16px;   
+}
+.ikUHQP {
+    background: rgb(255, 0, 0);
+    box-shadow: rgba(47, 48, 72, 0.3) 0px 0px 1px 0px;
+    padding: 8px 15px;
+    border-radius: 3px;
+    height: 1.95rem;
+    transition: transform 0.15s ease-in-out 0s;
+}
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../PaginaPrincipal.html" target="_self">
+                <img src="../foodmoodlogo.png" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+        <ul>
+            <li><a href="../PaginaPrincipal.html">Página Principal</a></li>
+            <li><a href="chatbot.html">Chatea con nuestra IA</a></li>
+            <li><a href="../calculadora.html">Calculadora de Calorías</a></li>
+            <li><a href="../Dieta.html">Crea tu dieta     <i class="fas fa-crown"></i></a></li>
+            <li><a href="../profesionales.html">Nuestros Profesionales     <i class="fas fa-crown"></i></a></li>
+            <li><a href="../blog/blog/blog.html">Blog</a></li>
+            <li><a href="../acercade/acercade.html">Acerca de</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="content">
+        <h2>Cargando...</h2>
+    </div>
+
+    
+    <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+    <div id="myLandbot" style="width: 100%; height: 600px; margin-top: 80px;"></div>
+    <script>
+      var myLandbot = new Landbot.Container({
+        container: '#myLandbot',
+        configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-2161735-ARL01QUESMVS1SID/index.json',
+      });
+    </script>
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
