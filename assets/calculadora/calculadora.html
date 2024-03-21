@@ -6,21 +6,62 @@
     <title>Calculadora de Calorías</title>
     <link rel="stylesheet" href="calculadora.css">
     <style>
-        footer {
-    margin-top: 40px;
-    border-top: 2px solid #fff; /* Establece un borde blanco de 1px */
-    background-color: #135C3E;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    animation: slideIn 0.5s ease-in-out;
+/* Estilos para el popup de advertencia */
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease; /* Transiciones suaves para la opacidad y el desenfoque */
+    backdrop-filter: blur(2px); /* Inicialmente sin desenfoque */
 }
 
-footer p {
-
- font-size: 16px;   
+.modal-content1 {
+    background-color: #fefefe;
+    color: #155a46;
+    border-radius: 10px;
+    margin: 25vh auto; /* Centrar verticalmente y horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    align-items: center; /* Para alinear verticalmente en el centro */
+    justify-content: center; /* Para alinear horizontalmente en el centro */
 }
-</style>
+
+
+.modal-content1.show {
+    opacity: 1;
+    transform: translateX(0); /* Desplazamiento a la posición original al aparecer */
+}
+
+
+/* Efecto de desenfoque cuando el cuerpo está desenfocado */
+body.blurred .modal1 {
+    display: block;
+    backdrop-filter: blur(2px); /* Aplicar desenfoque al fondo */
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transición suave para el cambio de color al pasar el ratón */
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
 </head>
 <body>
 
@@ -61,12 +102,26 @@ footer p {
         <button type="button" onclick="calcularCalorias()">Calcular</button>
     </form>
 
+    <div id="popup-advertencia-modal" class="modal1"> <!-- Cambiamos el ID aquí -->
+        <div class="modal-content1">
+            <span class="close" onclick="cerrarAdvertenciaPopup()">&times;</span>
+            <div class="popup-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/DIN_4844-2_Warnung_vor_einer_Gefahrenstelle_D-W000.svg/220px-DIN_4844-2_Warnung_vor_einer_Gefahrenstelle_D-W000.svg.png" alt="Advertencia" style="width: 100px; height: 100px;">
+            </div>
+            <h2>¡Advertencia!</h2>
+            <p>Tu peso está fuera del rango saludable para tu objetivo.</p>
+            <p>Por favor, considera ajustar tus objetivos de salud o consulta a un profesional.</p>
+            <p>Para buscar algún profesional cerca de tu ubicación, <a href="../profesionales.html">haz click aquí</a>.</p>
+        </div>
+    </div>
+    
+       
     <footer>
         <div class="container">
             <p>&copy; 2024 FoodMood™</p>
             <p>Desarrollado por <a href="../acercade/acercade.html">Yazmin Vizcarra y Arturo Gutierrez</a></p>
         </div>
-      </footer>
+    </footer>
 
     <div id="result"></div>
 
@@ -75,7 +130,7 @@ footer p {
     </div>
 
     <div id="popup-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" id="popup-chart-container">
             <span class="close" onclick="cerrarPopup()">&times;</span>
             <div id="popup-chart-container">
                 <canvas id="popup-chart" width="400" height="400"></canvas>
@@ -85,8 +140,6 @@ footer p {
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="calculadora.js"></script>
-
-
 
 </body>
 </html>
