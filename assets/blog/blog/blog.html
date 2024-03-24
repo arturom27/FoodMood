@@ -99,6 +99,94 @@ h2 {
         color: transparent;
       }
     }
+
+    #seccionInfomatrix {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#seccionInfomatrix::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0));
+  transition: background 0.3s ease;
+}
+
+#seccionInfomatrix:hover::before {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.0));
+}
+
+#seccionInfomatrix img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0px);
+  transition: filter 0.5s;
+  z-index: 0;
+}
+
+#seccionInfomatrix:hover img {
+  filter: blur(1.5px);
+}
+
+#seccionInfomatrix .text {
+  position: absolute;
+
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+#seccionInfomatrix h2 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-image: linear-gradient(to right, #ffffff, #fff8cb, #fff4b8, #ffee8c, #ffe96f, #ffe555, #ffdf27);
+  border-bottom: 0px;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+  height: 200px;
+  max-height: 500px;
+  width: 80%;
+  max-width: 100%;
+}
+
+#seccionInfomatrix p {
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  color: #ffffff;
+  font-size: 9px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+  height: 200px;
+  max-height: 500px;
+  width: 80%;
+  max-width: 100%;
+}
+
+
+#seccionInfomatrix:hover h2,
+#seccionInfomatrix:hover p {
+  opacity: 1;
+}
     </style>
 </head>
 <body>
@@ -139,6 +227,23 @@ h2 {
     <div class="container">
         <section class="section">
             <h2>   ‎ </h2>
+            <h2>Entradas</h2>
+            <div id="seccionInfomatrix">
+                <img src="infomatrixfoto.jpg" alt="Infomatrix 2024">
+                <h2>¡Gracias por ser parte de la Fase Nacional de Infomatrix 2024!</h2>
+                <p>Querido equipo,
+                ¡Qué emoción y honor es para nosotros haber llegado a la Fase Nacional de Infomatrix 2024! Nos llena de orgullo haber alcanzado este logro gracias a nuestro arduo trabajo, dedicación y pasión por la tecnología y la innovación.
+                Queremos expresar nuestro más profundo agradecimiento a todos y cada uno de ustedes por su arduo trabajo, creatividad y compromiso para hacer posible este increíble viaje. Sin su esfuerzo y determinación, este logro no sería posible.
+                Esperamos con entusiasmo representar a nuestro equipo y a nuestra institución en la emocionante competencia que se llevará a cabo en Guadalajara, en la UVM Sur. Será una experiencia inolvidable llena de aprendizaje, colaboración y camaradería.
+                Una vez más, gracias por su apoyo inquebrantable y por creer en nuestro potencial. Estamos listos para dar lo mejor de nosotros y dejar en alto el nombre de nuestro equipo.
+                ¡Nos vemos en Guadalajara!
+                Con gratitud,
+                FoodMood.</p>
+        </div>
+        </section>
+    </div>    
+
+        <section class="section">
             <h2>Recetas</h2>
             <article class="recipe" data-recipe="quinoa">
                 <img src="https://cdn7.kiwilimon.com/recetaimagen/1505/12060.jpg" alt="Ensalada de Quinoa">
